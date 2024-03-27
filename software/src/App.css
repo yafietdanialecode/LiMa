@@ -1,0 +1,247 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+}
+
+body {
+  background-color: lightgray;
+}
+
+#apps {
+  width: 5vw;
+  height: 95vh;
+  background-color: transparent;
+  position: fixed;
+  top: 2.5vh;
+  left: 1vw;
+  border-radius: 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  row-gap: 1vw;
+  padding-top: 0.5vw;
+}
+#apps button {
+  background-color: white;
+}
+#apps * {
+  height: 4vw;
+  width: 4vw;
+  border: none;
+  border-radius: 1vw;
+  font-size: 1.6vw;
+  border-top: 1px solid transparent;
+}
+#apps * i {
+  pointer-events: none;
+}
+#apps .selected {
+  background-color: black;
+}
+#apps .selected i {
+  color: white;
+}
+#apps #drop-here {
+  width: 4vw;
+  height: 0.5vw;
+  background: black;
+  position: fixed;
+}
+
+#tooltip {
+  position: fixed;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 0.5vw;
+  padding: 0.5vw;
+  font-size: 1.5vw;
+  font-family: calibri;
+  color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5000;
+  background-color: white;
+  visibility: hidden;
+}
+
+.page {
+  position: fixed;
+  height: 85vh;
+  width: 91vw;
+  top: 2vh;
+  left: 7vw;
+  background-color: rgb(255, 255, 255);
+  border-radius: 1vw;
+  animation-name: up-intro;
+  animation-duration: 300ms;
+  animation-timing-function: linear;
+  overflow: auto;
+  overflow-x: auto;
+}
+.page h1 {
+  font-size: 3vw;
+  padding: 1vw;
+  font-family: calibri;
+}
+.page h2 {
+  font-size: 2vw;
+  padding: 1vw;
+  font-family: calibri;
+}
+.page .card {
+  background: linear-gradient(45deg, lightcoral, lightblue);
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1vw;
+  margin: 1vw;
+  border-radius: 1vw;
+}
+.page .card h2 {
+  font-size: 2vw;
+  font-family: calibri;
+  margin-bottom: 0.5vw;
+}
+.page .card p {
+  font-size: 1vw;
+  font-family: calibri;
+}
+.page .card div.activity {
+  width: 100%;
+  margin: 0.5vw 0;
+  font-family: calibri;
+}
+.page .card button.open {
+  margin-top: 0.5vw;
+  width: 50%;
+  padding: 0.5vw 1vw;
+  background-color: white;
+  border: none;
+  border-radius: 0.5vw;
+  margin-left: auto;
+  align-items: center;
+}
+.page .notification {
+  background: white;
+  box-shadow: 0px 0px 5px lightgray;
+}
+.page .notification .lists {
+  height: 10vw;
+  width: 100%;
+  overflow: auto;
+  overflow-x: hidden;
+}
+.page .notification .activity {
+  padding: 0.5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  -moz-column-gap: 1vw;
+       column-gap: 1vw;
+  font-size: 1vw;
+}
+.page .notification .activity:hover {
+  border-radius: 0.5vw;
+  box-shadow: 0px 1px 5px lightgray;
+  border-bottom-color: transparent;
+  background: black;
+  color: white;
+}
+.page .notification button.open {
+  background-color: rgb(65, 65, 65);
+  color: white;
+  font-size: 1vw;
+}
+.page .notification button.open:hover {
+  background-color: rgb(29, 29, 29);
+}
+.page .report {
+  background: white;
+  box-shadow: 0px 0px 5px lightgray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.page .report img {
+  width: 10vw;
+}
+.page .report button.start {
+  border: none;
+  padding: 0.5vw 1vw;
+  color: white;
+  border-radius: 0.5vw;
+  font-size: 1vw;
+  display: flex;
+  -moz-column-gap: 0.5vw;
+       column-gap: 0.5vw;
+}
+.page .report button.start {
+  background-color: rgb(65, 65, 65);
+  color: white;
+}
+.page .report button.start:hover {
+  background-color: rgb(29, 29, 29);
+}
+.page .videos {
+  background: transparent;
+  display: flex;
+}
+.page .videos .workout-video {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+.page .videos .workout-video iframe {
+  width: 100%;
+}
+.page .videos .workout-video .time {
+  margin: 0.5vw;
+  padding: 0.5vw;
+  background-color: lightgray;
+  border-radius: 0.5vw;
+  font-family: sans-serif;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.page .to-do-lists {
+  padding: 1vw;
+  margin: 1vw;
+  margin-left: 2vw;
+}
+.page .to-do-lists label {
+  font-size: 1.5vw;
+  font-family: calibri;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  -moz-column-gap: 1vw;
+       column-gap: 1vw;
+}
+.page .to-do-input {
+  margin-left: 1vw;
+  padding: 1vw;
+  border: none;
+  border-radius: 1vw;
+  box-shadow: 0px 1px 5px lightgray;
+  font-size: 1.25vw;
+  width: 91vw;
+  position: fixed;
+  bottom: 5vh;
+  left: 6vw;
+}
+
+@keyframes up-intro {
+  0% {
+    top: 10vh;
+    opacity: 0;
+  }
+}/*# sourceMappingURL=App.css.map */
